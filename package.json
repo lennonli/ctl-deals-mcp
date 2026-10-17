@@ -1,0 +1,1 @@
+{"description":"A股控制权变更案例数据库 MCP Server（无状态 Streamable HTTP，零依赖）","engines":{"node":">=18"},"main":"server.mjs","name":"ctl-deals-mcp","scripts":{"start":"node server.mjs","test":"node --test"},"type":"module","version":"0.1.0"}
