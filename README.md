@@ -45,7 +45,7 @@ npm test           # 运行单元测试（node --test，零外部依赖，数据
 - 请求头 `Authorization: Bearer <token>`
 - URL 查询参数 `?token=<token>`（或 `?access_token=`，兼容不支持自定义请求头的客户端）
 
-## 部署（Mac mini，cloudflared → 本端口）
+## 部署（dmit，systemd + cloudflared）
 
 ```bash
 PORT=8788
@@ -69,6 +69,19 @@ npm start      # 或 node server.mjs
   }
 }
 ```
+
+## 给别人用（公网接入）
+
+作者自用的公网实例（dmit 常驻，systemd + cloudflared）：
+
+- MCP 端点：`https://ctl-deals-mcp.licheng.uk/mcp`
+- 鉴权二选一：请求头 `Authorization: Bearer <token>`，或 URL 直接拼
+  `?token=<token>`（兼容不支持自定义请求头的客户端）
+- token 找作者要；不要把 token 提交进任何公开仓库或聊天记录
+
+⚠️ 手机 App 接入注意：Claude 手机 App 添加 MCP 时，**必须关掉 "Requires sign-in"**
+（开着会走 OAuth 登录流程，报连不上）；URL 填
+`https://ctl-deals-mcp.licheng.uk/mcp?token=<你的token>` 即可。
 
 ## 数据说明
 
